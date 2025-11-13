@@ -23,7 +23,7 @@ const Register = () => {
 				</div>
 				<p className="text-center font-semibold">
 					Already have an account?{" "}
-					<Link to="/auth/register" className="text-red-500">
+					<Link to="/auth/login" className="text-red-500">
 						Login
 					</Link>
 				</p>
