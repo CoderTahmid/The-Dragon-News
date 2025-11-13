@@ -1,46 +1,6 @@
 import {FiBookmark, FiShare2, FiEye} from "react-icons/fi";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
-
-/**
- * TrendingNewsCard — a polished news/article card built with TailwindCSS + DaisyUI + React Icons.
- *
- * Props:
- *  - data: {
- *      _id: string,
- *      others_info?: { is_todays_pick?: boolean; is_trending?: boolean },
- *      category_id?: string,
- *      rating?: { number: number; badge?: string },
- *      total_view?: number,
- *      title: string,
- *      author: { name: string; published_date: string; img: string },
- *      thumbnail_url?: string,
- *      image_url?: string,
- *      details?: string,
- *      tags?: string[] // optional — if provided, rendered as badges
- *    }
- *  - onShare?: () => void
- *  - onBookmark?: () => void
- *  - onReadMore?: () => void
- */
-
-// const sample = {
-// 	_id: "be44c843d61859cc0b87cae85c55f9db",
-// 	others_info: {is_todays_pick: false, is_trending: true},
-// 	category_id: "01",
-// 	rating: {number: 4.5, badge: "Excellent"},
-// 	total_view: 231,
-// 	title: "US to name military mission in Ukraine and appoint commander – WSJ",
-// 	author: {
-// 		name: "Kumar Natasha",
-// 		published_date: "2022-08-26 12:15:36",
-// 		img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80",
-// 	},
-// 	thumbnail_url: "https://i.ibb.co/dr4TRY4/unsplash-Eh-Tc-C9s-YXsw-21.png",
-// 	image_url: "https://i.ibb.co/vz5K0FB/unsplash-Eh-Tc-C9s-YXsw-10.png",
-// 	details:
-// 		"Illustrative public photo In the coming weeks, the Joe Biden administration plans to name its military mission to support Ukraine and appoint a general to lead the military training and relief efforts. This is reported by The Wall Street Journal, citing US officials. The name of the operation formally recognizes US military support, akin to how the Pentagon dubbed the missions in Iraq and Afghanistan Operation Iraqi Freedom, Enduring Freedom and 'Guardian of Freedom'. The naming of training and assistance is of great bureaucratic importance, as it usually entails long-term dedicated funding and the possibility of special pay, rewards for military personnel participating in these missions.",
-// 	tags: ["Biden", "USA", "Ukraine", "Military", "Security", "Worthy News"],
-// };
+import { Link } from "react-router-dom";
 
 function formatDate(d) {
 	try {
@@ -128,9 +88,9 @@ export default function NewsCard({news}) {
 				</div>
 
 				<div className="mt-2">
-					<button className="btn btn-link no-underline p-0">
+					<Link to={`/news/${news._id}`} className="btn btn-link no-underline p-0">
 						Read More
-					</button>
+					</Link>
 				</div>
 
 				<div className="divider"></div>
